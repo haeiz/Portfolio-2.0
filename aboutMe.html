@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7a5f07f568.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="assets/FrontLogo.jpeg" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutMe.html">About Me</a></li>
+                    <li><a href="Project.html">Projects</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="assets/userphoto.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hello! i'm Hafiz Aiman, a Web Developer from Malaysia. I'm very interested in Web Development,
+                         thus i further my study in Web Development. 
+                         My goal is to turn my creativity into reality through my Web Development Skills.</p>
+    
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('name')">Name</p>
+                        <p class="tab-links" onclick="opentab('birth')">Birth</p>
+                        <p class="tab-links" onclick="opentab('address')">Address</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('email')">Email</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="name">
+                        <ul>
+                            <li><span>MUHAMMAD HAFIZ AIMAN BIN MOHD FATHI</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="birth">
+                        <ul>
+                            <li><span>October 28,2002</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="address">
+                        <ul>
+                            <li><span>Kuala Terengganu, Terengganu</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2020-2022</span><br>Matriculation Pahang</li>
+                            <li><span>2022-2023</span><br>University Sultan Zainal Abidin<br>-Bachelor's Degree of Internet Computing</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="email">
+                        <ul>
+                            <li><span>m.hafizaiman309@gmail.com</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+     <div class="copyright">
+        <p>Copyright ©2023 All rights reserved</p>
+    </div>
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+    
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    
+    </script>
+    
+    <script>
+    
+        var sidemenu = document.getElementById("sidemenu");
+    
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    
+    
+    </script>
+</body>
+</html>
